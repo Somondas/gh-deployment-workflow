@@ -4,7 +4,8 @@ const grandparent = document.getElementById("grandparent");
 
 child.addEventListener(
   "click",
-  () => {
+  (e) => {
+    // e.stopPropagation();
     console.log("Button Clicked, child");
   },
   true
@@ -15,13 +16,13 @@ parent.addEventListener(
   () => {
     console.log("Parent Clicked, parent");
   },
-  true
+  false
 );
 
 grandparent.addEventListener(
   "click",
-  () => {
-    console.log("GrandParent Clicked, grandparent");
+  (e) => {
+    console.log("Grandparent Clicked, grandparent");
   },
   true
 );
